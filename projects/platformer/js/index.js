@@ -5,7 +5,7 @@ $(document).ready(function () {
     let 
         opspark = window.opspark,
         game = opspark.createGame(create, update),
-        lives = 1000000000;
+        lives = 1000000;
         
     function create() {
         game.opspark.init();
