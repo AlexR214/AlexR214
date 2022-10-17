@@ -6,19 +6,24 @@
 	<script src="jquery.min.js"></script>
 	<style>
 		.box {
-			width: 70px;
-			height: 70px;
-			background-color: teal;
+			width: 100px;
+			height: 100px;
+			background-color: rgb(168, 0, 0);
 			font-size: 300%;
 			text-align: center;
 			display: block;
 			position: absolute;
 			top: 100px;
 			left: 0px;  /* <--- Change me! */
+		    background-image: url("https://static.wikia.nocookie.net/elderscrolls/images/2/2e/%D0%A7%D0%B5%D1%80%D0%B5%D0%BF.png/revision/latest?cb=20130406194552&path-prefix=ru");
+		    background-size: cover;
 		}
 		.board{
 			height: 100vh;
+			background-image: url("");
 		}
+
+		
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
@@ -41,7 +46,7 @@
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
 
 			// Every 50 milliseconds, call the update Function (see below)
-			setInterval(update, 50);
+			setInterval(update, 8.3);
 			
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);
@@ -61,19 +66,27 @@
 			//////////////////////////////////////////////////////////////////
 			
 			// TODO 2 - Variable declarations 
-			
+			var positionX = 0
+            var points = 0
+			var speed = 1
 
-			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
 			turn it around! 
 			*/
-			var positionX = 0
+			
 			
 			function update() {
+				positionX = positionX + speed;
 				moveBoxTo(positionX);
-
+				if (positionX > boardWidth){
+					speed = -speed
+				}
+				if (positionX < 0){
+					speed = -speed
+				}
+ 
 			};
 
 			/* 
@@ -82,8 +95,10 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				
-
+				positionX = 0;
+                points = points + 1;
+				changeBoxText(points);
+				speed = speed * 5
 
 			};
 		})();
