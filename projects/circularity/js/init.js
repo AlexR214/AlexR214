@@ -65,7 +65,7 @@ var init = function (window) {
            game.checkCirclePosition(circles[4]);
             
             // TODO 9 : Iterate over the array
-           
+           /*
             for (var i = 0; i < myArray.length; i++) {
                 var eachValue = myArray[i];
                 
@@ -73,7 +73,7 @@ var init = function (window) {
              }
             
             }
-    
+    */
         /* 
         This Function should check the position of a circle that is passed to the 
         Function. If that circle drifts off the screen, this Function should move
