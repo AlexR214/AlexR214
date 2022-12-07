@@ -8,19 +8,18 @@ var init = function (window) {
         canvas = app.canvas, 
         view = app.view,
         fps = draw.fps('#000');
-
-    
-    window.opspark.makeGame = function() {
         
-        window.opspark.game = {};
-        var game = window.opspark.game;
-    } 
+    
+     window.opspark.makeGame = function() {
+        
+            window.opspark.game = {};
+            var game = window.opspark.game;
+            
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM SETUP ////////////////////////////
         ////////////////////////////////////////////////////////////
         
         // TODO 1 : Declare and initialize our variables
-
         var circle;			
         var circles = [];
 
@@ -38,6 +37,7 @@ var init = function (window) {
         for (var loopsCompleted = 0; loopsCompleted < 100; loopsCompleted++) {
             drawCircle();
         }
+        
 
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
@@ -72,7 +72,7 @@ var init = function (window) {
                 // code to repeat using eachValue
              }
             
-        
+            }
     
         /* 
         This Function should check the position of a circle that is passed to the 
