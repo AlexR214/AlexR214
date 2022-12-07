@@ -8,13 +8,13 @@ var init = function (window) {
         canvas = app.canvas, 
         view = app.view,
         fps = draw.fps('#000');
-        
+
     
     window.opspark.makeGame = function() {
         
         window.opspark.game = {};
         var game = window.opspark.game;
-        
+    } 
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM SETUP ////////////////////////////
         ////////////////////////////////////////////////////////////
@@ -35,12 +35,9 @@ var init = function (window) {
 
         // TODO 3 / 7 : Call the drawCircle() function 
 
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
-       
+        for (var loopsCompleted = 0; loopsCompleted < 100; loopsCompleted++) {
+            drawCircle();
+        }
 
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////
@@ -66,12 +63,16 @@ var init = function (window) {
            game.checkCirclePosition(circles[2]);
            game.checkCirclePosition(circles[3]);
            game.checkCirclePosition(circles[4]);
-
-
+            
             // TODO 9 : Iterate over the array
            
+            for (var i = 0; i < myArray.length; i++) {
+                var eachValue = myArray[i];
+                
+                // code to repeat using eachValue
+             }
             
-        }
+        
     
         /* 
         This Function should check the position of a circle that is passed to the 
@@ -83,6 +84,15 @@ var init = function (window) {
             // if the circle has gone past the RIGHT side of the screen then place it on the LEFT
             if ( circle.x > canvas.width ) {
                 circle.x = 0;
+            }
+            if ( circle.x < 0 ) {
+                circle.x = canvas.width;
+            }
+            if ( circle.y > canvas.height ) {
+                circle.y = 0;
+            }
+            if ( circle.y < 0 ) {
+                circle.y = canvas.height;
             }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
