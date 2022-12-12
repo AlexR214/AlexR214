@@ -24,7 +24,7 @@ var init = function (window) {
         var circles = [];
 
         var howMany = Number(prompt("How many cirlces do you want?"))
-        var howFast = Number(prompt("How fast do you want the cirlces?"))
+        var howFast = Number(prompt("How fast do you want the cirlces lol?"))
         
         function drawCircle() {
             circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
